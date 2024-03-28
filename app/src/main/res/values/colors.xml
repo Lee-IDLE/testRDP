@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="dialog_background">#17171c</color>
+    <color name="dialog_btn_check_background">#ff6b6b</color>
+    <color name="dialog_btn_cancel_background">#2c2d33</color>
 </resources>
