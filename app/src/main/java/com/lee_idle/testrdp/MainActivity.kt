@@ -23,13 +23,15 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnSend.setOnClickListener{
             ip = "218.235.200.178"
-            val dialog = activity_authentication(this@MainActivity) // , socket
-            dialog.setOnCheckClickedListener { password ->
-                Toast.makeText(this@MainActivity, "$password", Toast.LENGTH_LONG).show()
-            }
-            dialog.show()
+
             CoroutineScope(Dispatchers.IO).launch {
-                /*val socket = Socket(ip, port.toInt())*/
+                val socket = Socket(ip, port.toInt())
+                val dialog = activity_authentication(this@MainActivity, socket) // , socket
+                dialog.setOnCheckClickedListener { password ->
+                    Toast.makeText(this@MainActivity, "$password", Toast.LENGTH_LONG).show()
+                }
+                dialog.show()
+
             }
             /*
             return@setOnClickListener
